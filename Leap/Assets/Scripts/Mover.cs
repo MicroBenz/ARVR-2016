@@ -15,6 +15,7 @@ public class Mover : MonoBehaviour {
 	}
 
 	Vector3 CalculateSpeedVector() {
+		return transform.forward;
 		Vector3 rbPos = rb.position;
 		Vector3 cameraPos = mainCamera.transform.position;
 		Vector3 normalVector = new Vector3 (rbPos.x - cameraPos.x, 0.0f, Mathf.Abs (cameraPos.z - rbPos.z));
