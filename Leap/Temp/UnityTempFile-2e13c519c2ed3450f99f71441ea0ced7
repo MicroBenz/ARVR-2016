@@ -78,6 +78,8 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
+'Assets/Scripts/DestroyByBoundary.cs'
+'Assets/Scripts/DestroyByContact.cs'
 'Assets/Scripts/EnemySphereController.cs'
 'Assets/Scripts/GameController.cs'
 'Assets/Scripts/GameManager.cs'
