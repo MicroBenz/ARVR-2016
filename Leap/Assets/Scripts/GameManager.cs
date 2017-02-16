@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
 	public GameObject hazard;
+	public GameObject bullet;
 	public Vector3 spawnValues;
 	public int hazardCount;
 	public float spawnWait;
@@ -42,6 +43,14 @@ public class GameManager : MonoBehaviour {
 		// 		Application.LoadLevel (Application.loadedLevel);
 		// 	}
 		// }
+		if (Input.GetButtonDown("Fire1")) {
+//			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+//			Vector3 mouseWorldPoint = ray.origin + (ray.direction * 2);
+			Vector3 v = Input.mousePosition;
+			v.z = 5;
+			v = Camera.main.ScreenToWorldPoint (v);
+			Instantiate (bullet, v, Camera.main.transform.rotation);
+		}
 	}
 
 	IEnumerator SpawnWaves()
