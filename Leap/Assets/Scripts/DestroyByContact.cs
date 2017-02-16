@@ -25,8 +25,9 @@ public class DestroyByContact : MonoBehaviour {
 		if (other.tag == "Boundary") {
 			return ;
 		}
-		// Debug.Log ("Non-Boundary");
 		Instantiate(explosion, transform.position, transform.rotation);
+		// Debug.Log ("Non-Boundary");
+		
 		// if (other.tag == "Player") {
 		// 	Instantiate(playerExplosion, other.transform.position, other.transform.rotation) ;
 		// 	gameManager.GameOver ();
