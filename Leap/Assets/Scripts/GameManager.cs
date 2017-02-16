@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
 			Vector3 v = Input.mousePosition;
 			v.z = 5;
 			v = Camera.main.ScreenToWorldPoint (v);
-			Instantiate (bullet, v, Camera.main.transform.rotation);
+			Instantiate (bullet, v, bullet.transform.rotation);
 		}
 	}
 
