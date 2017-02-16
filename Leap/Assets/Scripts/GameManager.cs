@@ -10,15 +10,38 @@ public class GameManager : MonoBehaviour {
 	public float spawnWait;
 	public float startWait;
 	public float waveWait;
+	public int gameLife;
+
+	public GUIText scoreText;
+	// public GUIText restartText;
+	// public GUIText gameOverText;
+	public GUIText lifeText;
+
+	// private bool gameOver;
+	// private bool restart;
+	private int score;
+	private int life;
 
 	// Use this for initialization
 	void Start () {
+		// gameOver = false;
+		// restart = false;
+		// restartText.text = "";
+		// gameOverText.text = "";
+		score = 0;
+		life = gameLife;
+		UpdateScore ();
+		UpdateLife ();
 		StartCoroutine (SpawnWaves ());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		// if (restart) {
+		// 	if (Input.GetKeyDown (KeyCode.R)) {
+		// 		Application.LoadLevel (Application.loadedLevel);
+		// 	}
+		// }
 	}
 
 	IEnumerator SpawnWaves()
@@ -34,11 +57,33 @@ public class GameManager : MonoBehaviour {
 			}
 			yield return new WaitForSeconds (waveWait);
 
-//			if (gameOver) {
-//				restartText.text = "Press R for restart";
-//				restart = true;
-//				break;
-//			}
+			// if (gameOver) {
+			// 	restartText.text = "Press R for restart";
+			// 	restart = true;
+			// 	break;
+			// }
 		}
+	}
+
+	public void AddScore (int newScoreValue)
+	{
+		score += newScoreValue;
+		UpdateScore ();
+	}
+
+	public void DecreaseLife (int newLifeValue)
+	{
+		life -= newLifeValue;
+		UpdateLife ();
+	}
+
+	void UpdateScore() 
+	{
+		scoreText.text = "Score: " + score;
+	}
+
+	void UpdateLife()
+	{
+		lifeText.text = "Life: " + life;
 	}
 }

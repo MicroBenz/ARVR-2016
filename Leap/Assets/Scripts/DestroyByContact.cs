@@ -32,7 +32,7 @@ public class DestroyByContact : MonoBehaviour {
 		// 	Instantiate(playerExplosion, other.transform.position, other.transform.rotation) ;
 		// 	gameManager.GameOver ();
 		// }
-		// gameManager.AddScore (scoreValue);
+		gameManager.AddScore (scoreValue);
 		// Destroy (other.gameObject);
 		// Destroy (gameObject);
 	}
