@@ -27,7 +27,7 @@ public class BulletController : MonoBehaviour {
 		else if (other.tag == "Hazard") {
 			Debug.Log ("ADD SCORE!");
 			Destroy (gameObject);
-			gameManager.AddScore (1);
+			// gameManager.AddScore (1);
 		}
 		else
 			return;

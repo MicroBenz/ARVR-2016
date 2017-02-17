@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1") && Time.time > nextFire) {
 			nextFire = Time.time + fireRate;
 			Vector3 mouseVector = Input.mousePosition;
-			mouseVector.z = 5;
+			mouseVector.z = gameObject.transform.position.z;
 			mouseVector = Camera.main.ScreenToWorldPoint (mouseVector);
 			Instantiate (bullet, mouseVector, bullet.transform.rotation);
 		}

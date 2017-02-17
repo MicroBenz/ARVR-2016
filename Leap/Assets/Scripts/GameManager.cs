@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public float startWait;
 	public float waveWait;
 	public int gameLife;
+	// public int scoreValue;
 	public int hazardDamage;
 
 	public GUIText scoreText;
