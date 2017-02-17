@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public float startWait;
 	public float waveWait;
 	public int gameLife;
+	public int hazardDamage;
 
 	public GUIText scoreText;
 	// public GUIText restartText;
@@ -80,9 +81,9 @@ public class GameManager : MonoBehaviour {
 		UpdateScore ();
 	}
 
-	public void DecreaseLife (int newLifeValue)
+	public void DecreaseLife ()
 	{
-		life -= newLifeValue;
+		life -= hazardDamage;
 		UpdateLife ();
 	}
 
