@@ -39,19 +39,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// if (restart) {
-		// 	if (Input.GetKeyDown (KeyCode.R)) {
-		// 		Application.LoadLevel (Application.loadedLevel);
-		// 	}
-		// }
-		if (Input.GetButtonDown("Fire1")) {
-//			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-//			Vector3 mouseWorldPoint = ray.origin + (ray.direction * 2);
-			Vector3 v = Input.mousePosition;
-			v.z = 5;
-			v = Camera.main.ScreenToWorldPoint (v);
-			Instantiate (bullet, v, bullet.transform.rotation);
-		}
+
 	}
 
 	IEnumerator SpawnWaves()
