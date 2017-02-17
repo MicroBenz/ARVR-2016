@@ -20,11 +20,11 @@ public class DestroyByBoundary : MonoBehaviour {
 
 	void OnTriggerExit(Collider other)
 	{
+		Destroy (other.gameObject);
 		if(other.tag == "Hazard") 
 		{
 			Instantiate(explosion, other.transform.position, other.transform.rotation);
 			gameManager.DecreaseLife();
 		}
-		Destroy (other.gameObject);
 	}
 }
