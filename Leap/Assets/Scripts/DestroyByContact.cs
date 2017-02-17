@@ -14,7 +14,6 @@ public class DestroyByContact : MonoBehaviour {
 		GameObject gameManagerObject = GameObject.FindWithTag ("GameManager");
 		if (gameManagerObject != null) {
 			gameManager = gameManagerObject.GetComponent<GameManager> ();
-			Debug.Log ("Find");
 		} else {
 			Debug.Log ("Cannot Find");
 		}
@@ -33,7 +32,7 @@ public class DestroyByContact : MonoBehaviour {
 		// 	gameManager.GameOver ();
 		// }
 		gameManager.AddScore (scoreValue);
-		// Destroy (other.gameObject);
-		// Destroy (gameObject);
+		Destroy (other.gameObject);
+		Destroy (gameObject);
 	}
 }
