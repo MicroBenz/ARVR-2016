@@ -24,7 +24,10 @@ public class DestroyByBoundary : MonoBehaviour {
 		if(other.tag == "Hazard") 
 		{
 			Instantiate(explosion, other.transform.position, other.transform.rotation);
-			gameManager.DecreaseLife();
+			if(!gameManager.isGameOver()) 
+			{
+				gameManager.DecreaseLife();
+			}
 		}
 	}
 }

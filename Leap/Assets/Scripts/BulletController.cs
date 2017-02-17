@@ -21,10 +21,7 @@ public class BulletController : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other) 
 	{
-		if (other.tag == "BulletBoundary") {
-			Debug.Log ("BOOM");
-		}
-		else if (other.tag == "Hazard") {
+		if (other.tag == "Hazard") {
 			Debug.Log ("ADD SCORE!");
 			Destroy (gameObject);
 			// gameManager.AddScore (1);
