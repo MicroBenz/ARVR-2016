@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public GameObject bullet;
+	public GameObject bomb;
 	public float fireRate;
 	private float nextFire;
 
@@ -22,5 +23,12 @@ public class PlayerController : MonoBehaviour {
 			mouseVector = Camera.main.ScreenToWorldPoint (mouseVector);
 			Instantiate (bullet, mouseVector, bullet.transform.rotation);
 		}
+		else if(Input.GetKeyDown(KeyCode.Z) && Time.time > nextFire) {
+			nextFire = Time.time + fireRate;
+			Vector3 mouseVector = Input.mousePosition;
+			mouseVector.z = gameObject.transform.position.z;
+			mouseVector = Camera.main.ScreenToWorldPoint (mouseVector);
+			Instantiate (bomb, mouseVector, bomb.transform.rotation);
+		} 
 	}
 }
