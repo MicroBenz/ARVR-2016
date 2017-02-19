@@ -30,19 +30,11 @@ public class DestroyByContact : MonoBehaviour {
 		else if(other.tag == "Bomb") {
 			Debug.Log ("Bomb");
 			Instantiate(explosionBomb, transform.position, transform.rotation);
-			// Collider[] hitColliders = Physics.OverlapSphere(transform.position, 8);
-			// Debug.Log(hitColliders.Length);
-			// for (int i = 0; i < hitColliders.Length; i++)
-			// {
-			// 	Instantiate(explosionBullet, transform.position, transform.rotation);
-			// }
-			// Collider bombCol = explosionBomb.GetComponent<Collider> ();
-			// bombCol.enabled = true;
 		}
 		else if(other.tag == "BombEffect") {
 			Debug.Log ("Effect Bomb");
-			Instantiate(explosionBullet, transform.position, transform.rotation);
-			// Instantiate(explosionBomb, transform.position, transform.rotation);
+			return;
+
 		}
 		// if (other.tag == "Player") {
 		// 	Instantiate(playerExplosion, other.transform.position, other.transform.rotation) ;
@@ -52,4 +44,5 @@ public class DestroyByContact : MonoBehaviour {
 		Destroy (other.gameObject);
 		Destroy (gameObject);
 	}
+
 }

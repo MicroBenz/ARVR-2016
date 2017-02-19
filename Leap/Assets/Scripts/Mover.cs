@@ -13,12 +13,15 @@ public class Mover : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		rb.velocity = CalculateSpeedVector() * speed;
+		rb.velocity = CalculateSpeedVectorNormal() * speed;
 		SpawnHelperCrosshair ();
 	}
 
-	Vector3 CalculateSpeedVector() {
+	Vector3 CalculateSpeedVectorNormal() {
 		return transform.forward;
+	}
+
+	Vector3 CalculateSpeedVectorSpecial() {
 		Vector3 rbPos = rb.position;
 		Vector3 cameraPos = mainCamera.transform.position;
 		Vector3 normalVector = new Vector3 (rbPos.x - cameraPos.x, 0.0f, Mathf.Abs (cameraPos.z - rbPos.z));
@@ -29,21 +32,9 @@ public class Mover : MonoBehaviour {
 		Vector3 crosshairPos = new Vector3 (rb.position.x, rb.position.y, 0);
 		this.generatedCrosshair = Instantiate (crosshair, crosshairPos, Quaternion.identity);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-//		Debug.Log (rb.gameObject);
-		if (rb.gameObject == null) {
-			Debug.Log ("ON DESTROY");
-		}
-	}
-
+		
 	void OnDestroy() {
 		Destroy (this.generatedCrosshair);
 	}
 
-	public void DoDestroy()
-	{
-		Destroy (this.generatedCrosshair);
-	}
 }
