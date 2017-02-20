@@ -22,7 +22,9 @@ public class SplashDamageController : MonoBehaviour {
 				Debug.Log ("Destroy Effect");
 				Destroy (hitColliders [i].gameObject);
 				Instantiate(explosionBullet, hitColliders [i].transform.position, hitColliders [i].transform.rotation);
-				gameManager.AddScore (1);
+				if (!gameManager.isGameOver() && !gameManager.isWin()) {
+					gameManager.AddScore (1);
+				}
 			}
 			i++;
 		}

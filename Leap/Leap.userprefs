@@ -1,9 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DestroyByContact.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/DestroyByContact.cs" Line="40" Column="24" />
-      <File FileName="Assets/Scripts/Mover.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Mover.cs" Line="35" Column="3" />
+      <File FileName="Assets/Scripts/DestroyByContact.cs" Line="29" Column="60" />
+      <File FileName="Assets/Scripts/SplashDamageController.cs" Line="25" Column="37" />
+      <File FileName="Assets/Scripts/BulletController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DestroyByBoundary.cs" Line="27" Column="35" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="133" Column="3" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="22" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

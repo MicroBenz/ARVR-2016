@@ -13,14 +13,17 @@ public class GameManager : MonoBehaviour {
 	public int gameLife;
 	// public int scoreValue;
 	public int hazardDamage;
+	public int winScore;
 
 	public GUIText scoreText;
 	public GUIText restartText;
 	public GUIText gameOverText;
 	public GUIText lifeText;
+	public GUIText winText;
 
 	private bool gameOver;
 	private bool restart;
+	private bool win;
 	private int score;
 	private int life;
 
@@ -28,8 +31,10 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		gameOver = false;
 		restart = false;
+		win = false;
 		restartText.text = "";
 		gameOverText.text = "";
+		winText.text = "";
 		score = 0;
 		life = gameLife;
 		UpdateScore ();
@@ -39,7 +44,11 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(life == 0)
+		if (score == winScore) 
+		{
+			Win ();
+		}
+		else if(life == 0)
 		{
 			GameOver ();
 		}
@@ -62,6 +71,11 @@ public class GameManager : MonoBehaviour {
 				yield return new WaitForSeconds (spawnWait);
 			}
 			yield return new WaitForSeconds (waveWait);
+
+			if (win) {
+				Restart ();
+				break;
+			}
 
 			if (gameOver) {
 				Restart ();
@@ -104,8 +118,20 @@ public class GameManager : MonoBehaviour {
 		restart = true;
 	}
 
+	void Win()
+	{
+		winText.text = "Win !!!";
+		win = true;
+	}
+
 	public bool isGameOver () 
 	{
 		return gameOver;
 	}
+
+	public bool isWin()
+	{
+		return win;
+	}
+		
 }

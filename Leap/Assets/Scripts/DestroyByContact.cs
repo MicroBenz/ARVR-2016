@@ -26,6 +26,9 @@ public class DestroyByContact : MonoBehaviour {
 		}
 		if (other.tag == "Bullet") {
 			Instantiate(explosionBullet, transform.position, transform.rotation);
+			if (!gameManager.isGameOver() && !gameManager.isWin()) {
+				gameManager.AddScore (1);
+			}
 		}
 		else if(other.tag == "Bomb") {
 			Debug.Log ("Bomb");
@@ -40,7 +43,7 @@ public class DestroyByContact : MonoBehaviour {
 		// 	Instantiate(playerExplosion, other.transform.position, other.transform.rotation) ;
 		// 	gameManager.GameOver ();
 		// }
-		gameManager.AddScore (1);
+//		gameManager.AddScore (1);
 		Destroy (other.gameObject);
 		Destroy (gameObject);
 	}
