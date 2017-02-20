@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
 	public GameObject hazard;
-	public GameObject bullet;
 	public Vector3 spawnValues;
 	public int hazardCount;
 	public float spawnWait;
